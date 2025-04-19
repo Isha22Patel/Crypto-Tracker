@@ -23,7 +23,7 @@ const Home = () => {
         );
         setCoins(res.data);
       } catch (err) {
-        console.error("Error fetching coins:", err);
+        console.error('Error fetching coins:', err);
       }
     };
 
@@ -37,46 +37,44 @@ const Home = () => {
   );
 
   return (
-    <div className="p-4">
-      <h2 className="text-2xl font-bold mb-4">Top 100 Cryptos</h2>
+    <div className="home-container">
+      <h2 className="home-title">Top 100 Cryptos</h2>
 
-      {/* 🔍 Search Input */}
+      {/* Search Bar */}
       <input
         type="text"
         placeholder="Search by name or symbol..."
-        className="mb-4 p-2 w-full max-w-md border rounded shadow-sm"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
+        className="search-input"
       />
 
-      <div className="overflow-x-auto">
-        <table className="min-w-full bg-white shadow rounded">
-          <thead className="bg-gray-100">
+      <div className="table-container">
+        <table className="coin-table">
+          <thead>
             <tr>
-              <th className="py-2 px-4 text-left">Coin</th>
-              <th className="py-2 px-4">Price</th>
-              <th className="py-2 px-4">24h %</th>
-              <th className="py-2 px-4">Market Cap</th>
+              <th>Coin</th>
+              <th>Price</th>
+              <th>24h %</th>
+              <th>Market Cap</th>
             </tr>
           </thead>
           <tbody>
             {filteredCoins.map((coin) => (
-              <tr key={coin.id} className="border-b hover:bg-gray-50">
-                <td className="py-2 px-4 flex items-center gap-2">
-                  <img src={coin.image} alt={coin.name} className="w-6 h-6" />
-                  {coin.name} <span className="text-sm text-gray-500">({coin.symbol.toUpperCase()})</span>
+              <tr key={coin.id}>
+                <td>
+                  <div className="coin-info">
+                    <img src={coin.image} alt={coin.name} className="coin-logo" />
+                    <span>{coin.name} ({coin.symbol.toUpperCase()})</span>
+                  </div>
                 </td>
-                <td className="py-2 px-4">${coin.current_price.toLocaleString()}</td>
+                <td>${coin.current_price.toLocaleString()}</td>
                 <td
-                  className={`py-2 px-4 ${
-                    coin.price_change_percentage_24h >= 0
-                      ? 'text-green-600'
-                      : 'text-red-500'
-                  }`}
+                  className={coin.price_change_percentage_24h >= 0 ? 'positive' : 'negative'}
                 >
                   {coin.price_change_percentage_24h.toFixed(2)}%
                 </td>
-                <td className="py-2 px-4">${coin.market_cap.toLocaleString()}</td>
+                <td>${coin.market_cap.toLocaleString()}</td>
               </tr>
             ))}
           </tbody>

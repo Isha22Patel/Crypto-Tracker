@@ -1,3 +1,108 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fb;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2d3748;
+  color: white;
+  padding: 20px 40px;
+}
+
+.navbar-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-button {
+  background-color: #4a5568;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.navbar-button:hover {
+  background-color: #2d3748;
+}
+
+/* Home */
+.home-container {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Search Bar */
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* Table */
+.table-container {
+  overflow-x: auto;
+}
+
+.coin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.coin-table th,
+.coin-table td {
+  padding: 12px;
+  text-align: left;
+}
+
+.coin-table th {
+  background-color: #edf2f7;
+  font-weight: bold;
+}
+
+.coin-table tr:nth-child(even) {
+  background-color: #f7fafc;
+}
+
+.coin-info {
+  display: flex;
+  align-items: center;
+}
+
+.coin-logo {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
+
+

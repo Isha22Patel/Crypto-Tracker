@@ -1,13 +1,15 @@
-import React from "react";
-import Navbar from "./components/Navbar.js";
-import Home from "./components/pages/Home"
 
-export default function App(){
+import React from 'react';
+import Navbar from './components/Navbar';
+import Home from './components/pages/Home';
 
+const App = () => {
   return (
-    <div>
-      <Navbar/>
-      <Home/>
-    </div>
-  )
-}
+      <div className="bg-gray-50 min-h-screen">
+        <Navbar />
+        <Home />
+      </div>
+  );
+};
+
+export default App;
