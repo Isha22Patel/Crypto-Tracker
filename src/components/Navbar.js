@@ -1,13 +1,28 @@
-// src/components/Navbar.jsx
-import React from 'react';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import './Navbar.css'
 
-const Navbar = () => {
+const Navbar = ({ search, setSearch }) => {
   return (
     <nav className="navbar">
-      <h1 className="navbar-title">💰 Crypto Tracker</h1>
-      <button className="navbar-button">USD</button>
+      <h2>💰 Crypto Tracker</h2>
+
+      <div className="navbar-center">
+        <input
+          type="text"
+          placeholder="Search coins..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="search-input"
+        />
+      </div>
+
+      <div className="navbar-links">
+        <Link to="/">Home</Link>
+        <Link to="#">News</Link> {/* Can link to a news page later */}
+      </div>
     </nav>
-  );
-};
+  )
+}
 
 export default Navbar;

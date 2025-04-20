@@ -1,15 +1,21 @@
+import React, { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Home from './components/pages/Home'
+import CoinDetails from './components/pages/CoinDetails'
 
-import React from 'react';
-import Navbar from './components/Navbar';
-import Home from './components/pages/Home';
+function App() {
+  const [search, setSearch] = useState('')
 
-const App = () => {
   return (
-      <div className="bg-gray-50 min-h-screen">
-        <Navbar />
-        <Home />
-      </div>
-  );
-};
+    <Router>
+      <Navbar search={search} setSearch={setSearch} />
+      <Routes>
+        <Route path="/" element={<Home search={search} />} />
+        <Route path="/coin/:id" element={<CoinDetails />} />
+      </Routes>
+    </Router>
+  )
+}
 
-export default App;
+export default App
