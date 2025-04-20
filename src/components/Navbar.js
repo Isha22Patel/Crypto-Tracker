@@ -14,12 +14,14 @@ const Navbar = ({ search, setSearch }) => {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="search-input"
+          aria-label="Search coins"
         />
       </div>
 
       <div className="navbar-links">
         <Link to="/">Home</Link>
-        <Link to="#">News</Link> {/* Can link to a news page later */}
+        <Link to="#">News</Link>
+        <Link to='/contact'>Contact Us</Link>
       </div>
     </nav>
   )

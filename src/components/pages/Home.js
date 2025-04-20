@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import './Home.css'
 
 const Home = ({search}) => {
   const [coins, setCoins] = useState([])
@@ -73,14 +74,7 @@ const Home = ({search}) => {
               <td style={{ padding: '10px' }}>
                 <button
                   onClick={() => handleCoinClick(coin.id)}
-                  style={{
-                    padding: '5px 10px',
-                    backgroundColor: '#4CAF50',
-                    color: '#fff',
-                    border: 'none',
-                    borderRadius: '4px',
-                    cursor: 'pointer',
-                  }}
+                  className='view-graph-btn'
                 >
                   View Graph
                 </button>
