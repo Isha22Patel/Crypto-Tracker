@@ -20,7 +20,7 @@ const Navbar = ({ search, setSearch }) => {
 
       <div className="navbar-links">
         <Link to="/">Home</Link>
-        <Link to="#">News</Link>
+        <Link to="/news">News</Link>
         <Link to='/contact'>Contact Us</Link>
       </div>
     </nav>
