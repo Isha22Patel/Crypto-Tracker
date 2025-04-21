@@ -17,6 +17,8 @@ const News = () => {
           },
         });
 
+        console.log(res.data.results)
+
         setArticles(res.data.results || []);
       } catch (err) {
         console.error('Failed to fetch news:', err);
